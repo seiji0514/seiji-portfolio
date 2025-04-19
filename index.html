@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="canonical" href="/" />
     <meta property="og:url" content="/" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   </head>
   <body>
     <header>
@@ -31,8 +33,21 @@
     </header>
 
     <main>
-      <section class="hero-image">
-        <img src="2024-12-02_21h30_22.png" alt="ヒーロー画像" />
+      <section class="hero-slider swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="images/slider1.jpg" alt="車椅子に座るアニメキャラクター" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/slider2.jpg" alt="オフィスで働く車椅子のアニメキャラクター" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/slider3.jpg" alt="パソコンを使用する車椅子のアニメキャラクター" />
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </section>
 
       <section class="section video-section">
@@ -64,5 +79,24 @@
         </div>
       </footer>
     </main>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".hero-slider", {
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
   </body>
 </html>
